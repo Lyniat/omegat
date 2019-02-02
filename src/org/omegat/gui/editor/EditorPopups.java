@@ -81,7 +81,7 @@ public final class EditorPopups {
      * create the spell checker popup menu - suggestions for a wrong word, add
      * and ignore. Works only for the active segment, for the translation
      *
-     * @param point
+     * @param
      *            : where should the popup be shown
      */
     public static class SpellCheckerPopup implements IPopupMenuConstructor {
@@ -132,6 +132,7 @@ public final class EditorPopups {
 
                 // the suggestions
                 for (final String replacement : suggestions) {
+                    System.out.println(replacement);
                     JMenuItem item = menu.add(replacement);
                     item.addActionListener(new ActionListener() {
                         // the action: replace the word with the selected

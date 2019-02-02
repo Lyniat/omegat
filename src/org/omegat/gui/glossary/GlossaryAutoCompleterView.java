@@ -110,6 +110,13 @@ public class GlossaryAutoCompleterView extends AutoCompleterListView {
                 // Add matched-capitalization version
                 String payload = StringUtil.matchCapitalization(term, context, getTargetLocale());
                 AutoCompleterItem item = new AutoCompleterItem(payload, new String[] { entry.getSrcText() }, length);
+                String text = item.payload;
+
+                String [] parts = text.split(" ->");
+                if(parts.length >= 1){
+                    item = new AutoCompleterItem(parts[0], new String[] { entry.getSrcText() }, length);
+                }
+
                 if (!result.contains(item)) {
                     result.add(item);
                 }
